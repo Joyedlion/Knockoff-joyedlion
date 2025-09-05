@@ -4,9 +4,12 @@ import sqlite3
 import asyncio
 import re
 import time
+import os
+from dotenv import load_dotenv
 
 # ---------------- CONFIG ----------------
-TOKEN = "YOUR_BOT_TOKEN_HERE"  # <-- Replace with your bot token
+load_dotenv()
+TOKEN = os.getenv("BOT_TOKEN")  # <-- Replace with your bot token
 PREFIX = "!"
 INTENTS = discord.Intents.default()
 INTENTS.message_content = True
